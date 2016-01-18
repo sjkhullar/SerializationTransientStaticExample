@@ -1,0 +1,1 @@
+Serialization and deserialization in java, We will discuss about the static and transient variable
