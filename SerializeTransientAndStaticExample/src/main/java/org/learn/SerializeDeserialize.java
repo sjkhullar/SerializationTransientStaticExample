@@ -15,9 +15,9 @@ public class SerializeDeserialize {
 		Person.lastName = "harvey";		
 		FileOutputStream output = new FileOutputStream(new File("savePerson.txt"));
 		ObjectOutputStream outputStream = new ObjectOutputStream(output);
-		outputStream.writeObject(person);
-		outputStream.flush();
+		outputStream.writeObject(person);		
 		outputStream.close();
+		output.close();
 		System.out.println("Serialized the person object : "+person);
 		
 		//Update the static variable to confirm that its not serialized
@@ -29,6 +29,7 @@ public class SerializeDeserialize {
 		ObjectInputStream objectInputStream = new ObjectInputStream(inputStream);
 		Person person = (Person) objectInputStream.readObject();
 		System.out.println("Deserialize the person object :"+ person);
+		objectInputStream.close();
 		inputStream.close();
 	}
 	
